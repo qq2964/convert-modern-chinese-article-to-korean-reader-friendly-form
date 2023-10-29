@@ -21,13 +21,13 @@ class Punctuation:
 
 result_writer = io.StringIO()
 
-magic = '𗀀'  # 西夏字
+magic = '𗀀'  # 一般通过西夏字
 text = text.replace('\n', '\n' + magic + '\n')  # workaround
 
 seg = pkuseg.pkuseg(postag=True)
 cut_result = seg.cut(text)
 
-prev_is_pause = False
+prev_is_pause = False  # ".", ","
 prev_is_character = False
 
 for seg in cut_result:
